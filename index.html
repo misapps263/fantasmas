@@ -108,7 +108,7 @@ height:100%;background:#000;}
  
 		<div id="camara" style="z-index:100;width:100%;height:33px;color:#009900;position:relative"  onclick="playAudio('/android_asset/www/camara.mp3');">####la camara####</div>
 
-<div id="pulsaciones" style="color:red;position:absolute;top:20px;left:20px; ">####pulsaciones####</div>
+<div  style="color:red;position:absolute;top:20px;left:20px; ">pulsaciones<b id="pulsaciones">90</b></div>
  
  
 
@@ -213,6 +213,20 @@ function flash(){
 /*/////////esto es un flash-azo*/
 playAudio("/android_asset/www/camara.mp3");
 var x;
+var c;
+//ocultamos la camara
+c=$('#camara');
+setTimeout(function(){
+	// x.animate({opacity:0.0,background:'#000000'},2000), 
+	 c.animate({opacity:0},1000 ),
+	 c.animate({opacity:1},1000 ),
+	 }//fin animate 
+	, 2000) ;
+//subimos pulsaciones
+var p;
+p=$("pulsaciones");
+p.text()+=20;
+//cambiamos el fondo	  
   x=$("#bg");
 	 //alert('flash');
 	//$('.fantasma').css('opacity','0.7');
@@ -274,7 +288,7 @@ var i;
 function susto(){
 var i=Math.floor(Math.random() *5,1);
 sustoimg="ring"+i;
-playAudio("/android_asset/www/gosht6.mp3");
+playAudio("/android_asset/www/gosht"+i+".mp3");
 var x=$('#bg');
 x.animate({opacity:0.0 },200)
 	 x.css("background-image","url('img/"+sustoimg+".jpg') ");
