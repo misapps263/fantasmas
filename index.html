@@ -106,12 +106,12 @@ height:100%;background:#000;}
 
     </div>
     
-    		<div id="camara" style="z-index:100;width:10%;height:100%;color:#009900;position:relative;left:0px;"  onclick="playAudio('/android_asset/www/camara.mp3');">####la camara####</div>
+    		<div id="camara" style="z-index:100;width:10%;height:100%;color:#009900;position:absolute;left:0px;"  onclick="playAudio('/android_asset/www/camara.mp3');">####la camara####</div>
 
 </div>
  
 
-<div  style="color:red;position:absolute;top:20px;left:20px; ">pulsaciones<input type="text" length="3" size="3" id="pulsaciones" value="90" style="background:transparent;border:none;color:red;" class="pulse"/></div>
+<div  style="color:red;position:absolute;top:20px;left:20px; ">pulsaciones<input type="text" length="3" size="3" id="pulsaciones" value="90" style="background:transparent;border:none;color:red;font-weight:bolder;font-size:125%;" class="pulse"/></div>
  
  
 
@@ -268,7 +268,7 @@ pulsaciones();
  	setInterval(function(){if(x.val()>91){
  	 x.val(parseFloat(x.val())-1);
 	 }}//fin animate 
-	 , 1000)  ;
+	 , 4000)  ;
  }
  relax();
 function gameover(){alert('game over');
