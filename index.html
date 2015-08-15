@@ -104,11 +104,13 @@ height:100%;background:#000;}
 		<img class="fantasma" id="fantasma1" data-position="1" style="position:relative;" src="img/woman.png" data-face="false"/>  
 
     </div>
+    
+    		<div id="camara" style="z-index:100;width:10%;height:100%;color:#009900;position:relative;left:0px;"  onclick="playAudio('/android_asset/www/camara.mp3');">####la camara####</div>
+
 </div>
  
-		<div id="camara" style="z-index:100;width:100%;height:33px;color:#009900;position:relative"  onclick="playAudio('/android_asset/www/camara.mp3');">####la camara####</div>
 
-<div  style="color:red;position:absolute;top:20px;left:20px; ">pulsaciones<b id="pulsaciones">90</b></div>
+<div  style="color:red;position:absolute;top:20px;left:20px; ">pulsaciones<input type="text" length="3" size="3" id="pulsaciones">90</b></div>
  
  
 
@@ -219,13 +221,14 @@ c=$('#camara');
 setTimeout(function(){
 	// x.animate({opacity:0.0,background:'#000000'},2000), 
 	 c.animate({opacity:0},1000 ),
-	 c.animate({opacity:1},1000 )
+	 c.animate({opacity:1},3000 )
 	 }//fin animate 
 	, 2000) ;
 //subimos pulsaciones
 var p;
 p=$("pulsaciones");
-//p.text()+=20;
+p.val()+=20;
+ 
 //cambiamos el fondo	  
   x=$("#bg");
 	 //alert('flash');
