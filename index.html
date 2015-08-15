@@ -253,20 +253,29 @@ pulsaciones();
  
  function pulsaciones(){
  	var x;
-	x=$('#input');
-	x.val(parseFloat(x.val())+20) ;
-	if(x.val()>190){gameover()};
- 	if(x.val()>90){
- 		
- 		//bajamos pulsaciones
- 	setTimeout(function(){
- 	 parseFloat(x.val())-1;
-	 }//fin animate
-	 , 2000)  
- 		
- 	}
+	x=$('#pulsaciones');
+	console.log("pulsaciones+"+x.val());
+	 x.val(parseFloat(x.val())+20);
+	 
+	if(x.val()>190){gameover()}
+ 	relax()
  }
-function gameover(){alert('game over')}
+ function relax(){
+  	var x;
+	x=$('#pulsaciones');
+ 		//bajamos pulsaciones
+ 	setInterval(function(){if(x.val()>91){
+ 	 x.val(parseFloat(x.val())-1);
+	 }}//fin animate 
+	 , 1000)  ;
+ }
+ relax();
+function gameover(){alert('game over');
+	var x;
+	x=$('#pulsaciones');x.val(90)
+}
+ 
+ 
  
 function mover( ){
  	  playAudio("/android_asset/www/gosht1.mp3");
