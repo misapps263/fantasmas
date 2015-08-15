@@ -255,13 +255,14 @@ pulsaciones();
  	var x;
 	x=$('#input');
 	 parseFloat(x.val())+20;
-	if(x.val()>190){gameover()}
+	if(x.val()>190){gameover()};
  	if(x.val()>90){
  		
  		//bajamos pulsaciones
  	setTimeout(function(){
  	 parseFloat(x.val())-1;
-	 }//fin animate , 2000)  
+	 }//fin animate
+	 , 2000)  
  		
  	}
  }
