@@ -225,9 +225,7 @@ setTimeout(function(){
 	 }//fin animate 
 	, 2000) ;
 //subimos pulsaciones
-var x;
-x=$('#pulsaciones');
-x.val(parseFloat(x.val())+20)
+pulsaciones();
 //cambiamos el fondo	  
   x=$("#bg");
 	 //alert('flash');
@@ -253,7 +251,21 @@ x.val(parseFloat(x.val())+20)
 		 
 }
  
-
+ function pulsaciones(){
+ 	var x;
+	x=$('#input');
+	 parseFloat(x.val())+20;
+	if(x.val()>190){gameover()}
+ 	if(x.val()>90){
+ 		
+ 		//bajamos pulsaciones
+ 	setTimeout(function(){
+ 	 parseFloat(x.val())-1;
+	 }//fin animate , 2000)  
+ 		
+ 	}
+ }
+function gameover(){alert('game over')}
  
 function mover( ){
  	  playAudio("/android_asset/www/gosht1.mp3");
