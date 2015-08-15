@@ -254,7 +254,7 @@ pulsaciones();
  function pulsaciones(){
  	var x;
 	x=$('#input');
-	 parseFloat(x.val())+20;
+	x.val(parseFloat(x.val())+20) ;
 	if(x.val()>190){gameover()};
  	if(x.val()>90){
  		
