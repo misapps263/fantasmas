@@ -127,9 +127,10 @@ function inicializarEventos()
   x=$("[id^='fantasma']");
   x.click( 
 	function(){
-	
+	//position:absolute;left:450px;top: 150px;
 	
 	if($(this).attr('data-face')==='true'){
+       	$(this).css('position','absolute');
 	$(this).css('left','450px');
 	$(this).css('top','150px');
 	$(this).css('height','200px');
@@ -210,9 +211,10 @@ function presionTitulo2()
 function flash(){
  
 /*/////////esto es un flash-azo*/
+playAudio("/android_asset/www/camara.mp3");
 var x;
   x=$("#bg");
-	//alert('flash');
+	 //alert('flash');
 	//$('.fantasma').css('opacity','0.7');
 	//$('#bg').css('opacity','0.0');
 	x.css("background-image","url('img/render3.jpg') ");
