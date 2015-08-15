@@ -1,0 +1,209 @@
+ 
+
+<html>
+<head>
+<title>fantasmas</title>
+
+<script src="jquery.1.8.2.min.js"></script>
+<script src="jquery.mobile.1.2.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<style type="text/css">
+<!-- 
+#bg{
+height:100%; background:#000 url('img/rrrrender1.jpg');height:100%; background-size:cover; background-repeat: no-repeat; background-position:center; 
+overflow:hidden; } 
+#fantastas{
+height:100%;background:#000;} 
+#fantasma1 { position:absolute;left:450px;top: 150px;float:left; z-index:100;widht:100px;}
+ 
+.fantasma{  background-size:100%; background-position:center;background-repeat: no-repeat;height:200px;width:100px; 	opacity: 0.0;border:2px solid red;}
+ 
+-->
+</style>
+</head>
+<body>
+<div id="bg">
+    <div id="fantasmas">
+ 		<!--<div class="fantasma" id="fantasma1" data-position="1" style="position:relative;"> </div>-->
+		<img class="fantasma" id="fantasma1" data-position="1" style="position:relative;" src="img/woman.png" data-face="false"/>  
+
+    </div>
+</div>
+ 
+		<div id="camara" style="z-index:100;width:100%;height:33px;color:#009900;position:relative">####la camara####</div>
+
+<div id="pulsaciones" style="color:red;position:absolute;top:20px;left:20px; ">####pulsaciones####</div>
+ 
+ 
+
+</body>
+<script type="text/javascript">
+<!--
+var x;
+x=$(document);
+x.ready(inicializarEventos);
+
+function inicializarEventos()
+{setInterval("susto()",33000);
+  var x;
+  x=$("#camara");
+  x.click(flash)
+  x=$("[id^='fantasma']");
+  x.click( 
+	function(){
+	
+	
+	if($(this).attr('data-face')==='true'){
+	$(this).css('left','450px');
+	$(this).css('top','150px');
+	$(this).css('height','200px');
+	$(this).css('width','100px');
+	 
+	}else{
+	//alert('mueres');
+	}
+	}
+	 
+	
+	);
+	
+} 
+/*
+function ver()
+{
+  var x;
+  x=$("#bg");
+  x.css("color","#ff0000");
+	//x.animate( {opacity: 0.9},100);
+  //x.css("background-image","url('img/render1.jpg') "); 
+   
+	   x.css("background ","#000 ");
+	x.css("background-size","cover ");  
+	//$('.fantasma').css('opacity','0.3');
+	setInterval(function(){
+	
+	/ /////////esto es un flash-azo
+	x.css("background-image","url('') ");
+	 x.animate({opacity:1.0,background:'#000000'},5000); 
+	 x.css("background-image","  "); 
+	 //x.css("background","#000000");
+	 x.animate({opacity:0.0,background:'#000000'},100);
+	  x.css("background-size"," cover");x.css("background-repeat"," no-repeat");
+		$('.fantasma').css('opacity','0.0');  },
+		
+		///
+		/////////mover fantasma/////////
+		$( "#fantasma" ).animate({
+	width:"1%",
+    left: "1%",
+    opacity: '1.0',
+    marginLeft: "0.6in",
+    background:'#000',
+    borderWidth: "10px"
+  }, 5000 )
+		///////////////////
+		, 5000)
+  x.css("font-family","Courier");
+	//x.animate( {opacity: 0.6},1000);
+	
+	
+	//mover fantasmas
+	$("#fantasma").css(
+	 "position", "relative"
+	 );
+	 //$("#fantasma").css("top", "100px");
+   //$("#fantasma").css("left",'19px');
+	// $("#fantasma").css('opacity','0.9');
+  
+	//$("#fantasma").attr('data-position',$("#fantasma").attr('data-position')+10);
+	//$("#fantasma").position().top+$("#fantasma").attr('data-position',$("#fantasma").attr('data-position')+10);+"px"
+	 // alert($("#fantasma").position().left) ;
+  
+  
+}*/
+
+function presionTitulo2()
+{
+
+  var x;
+  x=$("#titulo2");
+  x.css("color","#ffff00");
+  x.css("background-color","#ff0000");
+  x.css("font-family","Arial");
+}
+function flash(){
+ 
+/*/////////esto es un flash-azo*/
+var x;
+  x=$("#bg");
+	//alert('flash');
+	//$('.fantasma').css('opacity','0.7');
+	//$('#bg').css('opacity','0.0');
+	x.css("background-image","url('img/render3.jpg') ");
+	 $('.fantasma').animate({opacity:0.9 },200)
+	  x.animate({opacity:0.3 },200)
+		x.animate({opacity:0.8 },300)
+		
+	
+	setTimeout(function(){
+	// x.animate({opacity:0.0,background:'#000000'},2000), 
+	 x.animate({opacity:1},100 ),
+	 x.css("background-size"," cover"),x.css("background-repeat"," no-repeat"),
+	 x.css("background-image","url('img/.jpg') "),
+	 $('.fantasma').animate({opacity:0},500 ).add( mover());
+	 
+	 }//fin animate 
+	  
+		, 2000)  
+		/////
+		 
+}
+ 
+
+ 
+function mover( ){
+ 	  
+var i;
+ var totalgost=$( ".fantasma" ).size();
+  ///crear array de valores para crear un numero ramdom
+ for(i=0;i<totalgost+1;i++){
+ console.log('totalgost '+totalgost)
+  //var paso=Math.floor((Math.random() * $( "#fantasma"+i+"").width()) + $( "#fantasma"+i+"").width()+Math.random() *100+12);
+	 var s=Math.floor((Math.random() * 50 ),1);
+	 var signo;
+	 if(s<=25){ direccion ='+';
+	 						$( "#fantasma"+i+"").attr( 'src', "img/woman1.png" );
+							$( "#fantasma"+i+"").attr( 'data-face', "true" );
+							}else{
+							direccion='-';
+							$( "#fantasma"+i+"").attr( 'src', "img/woman.png" );
+							$( "#fantasma"+i+"").attr( 'data-face', "false" );
+							};
+	  var paso=Math.floor((Math.random() * 100) + 50);
+ // alert('$( "#fantasma"'+i+")");
+    $( "#fantasma"+i+"").animate({ 'left': direccion+"="+ paso +"px" }, 100 ) 
+		 console.log( direccion +":+="+ paso +"px"  );
+ $( "#fantasma"+i+"").css('opacity','1.0');
+ 
+ $( "#fantasma"+i+"").animate({ 'top': "+=5px" }, 100 );
+  $( "#fantasma"+i+"").animate({ 'height': "+=35px" ,'width': "+=25px" }, 100 )
+ 
+ }
+} 
+// -->
+
+
+function susto(){
+var i=Math.floor(Math.random() *5,1);
+sustoimg="ring"+i;
+
+var x=$('#bg');
+x.animate({opacity:0.0 },200)
+	 x.css("background-image","url('img/"+sustoimg+".jpg') ");
+   x.animate({opacity:0.5 },100);x.animate({opacity:1.0 },200);
+ setTimeout(function(){x.css("background-image","url('img/rend.jpg') ")},500)
+}
+
+
+</script>
+</html>
