@@ -164,7 +164,7 @@ function inicializarEventos()
 	$(this).css('width','100px');
 	 
 	}else{
-	alert('mueres');
+	playAudio("/android_asset/www/ghost3.mp3");
 	}
 	}
 	 
@@ -282,7 +282,7 @@ pulsaciones();
 	console.log("pulsaciones+"+x.val());
 	 x.val(parseFloat(x.val())+20);
 	 
-	if(x.val()>200){gameover()}
+	if(x.val()>200){restavida(20)}
  	relax()
  }
  function relax(){
@@ -295,9 +295,18 @@ pulsaciones();
 	 , 7000)  ;
  }
  relax();
-function gameover(){alert('game over');
-	var x;
-	x=$('#pulsaciones');x.val(90)
+ function restavida(e){
+ 	var x;
+	x=$('#vida');
+	console.log("vida+"+x.val());
+	x.val(parseFloat(x.val())-e);
+ 	var y;
+	y=$('#pulsaciones');y.val(90)
+ 	
+ }
+function gameover(){
+	alert('game over');
+
 }
  
  
