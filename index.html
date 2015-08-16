@@ -128,7 +128,14 @@ height:100%;background:#000;}
 </div>
  
 
-<div  style="color:red;position:absolute;top:20px;left:20px; ">pulsaciones<input type="text" length="3" size="3" id="pulsaciones" value="90" style="background:transparent;border:none;color:red;font-weight:bolder;font-size:125%;" class="pulse"/></div>
+<div  style="color:red;position:absolute;top:20px;left:20px; ">
+	pulsaciones<input type="text" length="3" size="3" id="pulsaciones" value="90" style="background:transparent;border:none;color:red;font-weight:bolder;font-size:125%;" class="pulse"/>
+<div style="color:green;">vida<input type="text" length="3" size="3" id="vida" value="100" style="background:transparent;border:none;color:green;font-weight:bolder;font-size:125%;" class=""/>
+
+<div>	hit<input type="text" length="3" size="3" id="hit" value="0" style="background:transparent;border:none;color:yellow;font-weight:bolder;font-size:125%;" class=""/>
+
+</div>
+</div>
  
  
 
@@ -157,7 +164,7 @@ function inicializarEventos()
 	$(this).css('width','100px');
 	 
 	}else{
-	//alert('mueres');
+	alert('mueres');
 	}
 	}
 	 
