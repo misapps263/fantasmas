@@ -101,6 +101,7 @@ document.getElementById("audio_position").innerHTML = position;
 </script>
 <style type="text/css">
 <!-- 
+body(background:#000;)
 #bg{
 height:100%; background:#000 url('img/rrrrender1.jpg');height:100%; background-size:cover; background-repeat: no-repeat; background-position:center; 
 overflow:hidden; } 
@@ -108,7 +109,7 @@ overflow:hidden; }
 height:100%;background:#000;} 
 #fantasma1 { position:absolute;left:250px;top: 90px;float:left; z-index:100;widht:100px;}
  
-.fantasma{  background-size:100%; background-position:center;background-repeat: no-repeat;height:200px;width:100px; 	opacity: 0.0;border:2px solid red;}
+.fantasma{  background-size:100%; background-position:center;background-repeat: no-repeat;height:200px;width:100px; 	opacity: 0.0;}
  
 -->
 </style>
@@ -150,8 +151,8 @@ function inicializarEventos()
 	
 	if($(this).attr('data-face')==='true'){
        	$(this).css('position','absolute');
-	$(this).css('left','450px');
-	$(this).css('top','150px');
+	$(this).css('left','250px');
+	$(this).css('top','90px');
 	$(this).css('height','200px');
 	$(this).css('width','100px');
 	 
