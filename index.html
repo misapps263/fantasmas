@@ -115,7 +115,7 @@ height:100%;background:#000;}
 <link rel="stylesheet" type="text/css" href="animations.css" />
 </head>
 <body>
-<div id="bg">
+<div id="bg" style="height:100%;overflow:hidden">
     <div id="fantasmas">
  		<!--<div class="fantasma" id="fantasma1" data-position="1" style="position:relative;"> </div>-->
 		<img class="fantasma" id="fantasma1" data-position="1" style="position:relative;" src="img/woman.png" data-face="false"/>  
@@ -274,7 +274,7 @@ pulsaciones();
 	console.log("pulsaciones+"+x.val());
 	 x.val(parseFloat(x.val())+20);
 	 
-	if(x.val()>190){gameover()}
+	if(x.val()>200){gameover()}
  	relax()
  }
  function relax(){
@@ -284,7 +284,7 @@ pulsaciones();
  	setInterval(function(){if(x.val()>91){
  	 x.val(parseFloat(x.val())-1);
 	 }}//fin animate 
-	 , 10000)  ;
+	 , 7000)  ;
  }
  relax();
 function gameover(){alert('game over');
