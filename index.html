@@ -18,29 +18,23 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
 playAudio("/android_asset/www/door.mp3");// local con PHONEGP 4.2.0-0.23.0
 //bgsound
-function bgsound(url) {
 
-        var my_media = new Media(url,
-            function() {
-                console.log("playAudio():Audio Success");
-            },
-            function(err) {
-                console.log("playAudio():Audio Error: "+err);
-            },
-            function(status) {
-                    alert(status);
-                  //  if (my_media.MEDIA_STOPPED === 4) {
-                    //       playAudio(host_root+"resources/medias/sardana.mp3");  
-                          // my_media.play();
-                   // }
-        });
-
-        // Play audio
-        my_media.play({numberOfLoops:-1});
-    }
 bgsound("/android_asset/www/hearthbeat.mp3");
 //playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3?); //remoto
 }
+
+function bgsound(url) {
+
+       var myMedia;
+var loop = function (status) {
+    if (status === Media.MEDIA_STOPPED) {
+        myMedia.play();
+    }
+};
+myMedia = new Media(url, null, null, loop);
+myMedia.play();
+ 
+    }
 // Audio player
 //
 var my_media = null;
