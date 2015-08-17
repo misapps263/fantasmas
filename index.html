@@ -165,17 +165,17 @@ function inicializarEventos()
 	$(this).css('width','100px');
 	 //hit-1
 	 //comprobamos el valor hit
- 
- var h;
- h=$('#hit').val();
- h.val(parseFloat(h.val())-1);
+	var y;
+	y=$('#hit');
+	console.log("vida+"+y.val());
+	y.val(parseFloat(y.val())-1);
   
   
 	}else{
-	 
- var h;
- h=$('#hit').val();
- h.val(parseFloat(h.val())+1);
+	var y;
+	y=$('#hit');
+	console.log("vida+"+y.val());
+	y.val(parseFloat(y.val())+1);
 	playAudio("/android_asset/www/ghost3.mp3");
 	}
 	}
@@ -355,9 +355,10 @@ var i;
  
  //comprobamos el valor hit
  
- var h;
- h=$('#hit').val();
- h.val(parseFloat(h.val())+1);
+ var y;
+	y=$('#hit');
+	console.log("vida+"+y.val());
+	y.val(parseFloat(y.val())+1);
  if(h>5){gameover()}
 } 
 // -->
