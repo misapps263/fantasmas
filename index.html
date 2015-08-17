@@ -176,7 +176,7 @@ function inicializarEventos()
 	y=$('#hit');
 	console.log("vida+"+y.val());
 	y.val(parseFloat(y.val())+1);
-	playAudio("/android_asset/www/ghost3.mp3");
+	playAudio("/android_asset/www/gosth6.mp3");
 	}
 	}
 	 
@@ -317,7 +317,14 @@ pulsaciones();
  	
  }
 function gameover(){
-	alert('game over');
+	var x;
+	x=$('#gameover');
+	 
+	 x.text('gameover');
+	 y=$('#hit');
+	 
+	y.val(0);
+	  playAudio("/android_asset/www/gosht1.mp3");
 
 }
  
@@ -325,7 +332,7 @@ function gameover(){
  
 function mover( ){
 
-	  playAudio("/android_asset/www/gosht1.mp3");
+	  playAudio("/android_asset/www/door.mp3");
 var i;
  var totalgost=$( ".fantasma" ).size();
   ///crear array de valores para crear un numero ramdom
